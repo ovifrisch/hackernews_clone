@@ -1,3 +1,7 @@
+require('fetch')
+const base_url = "https://news.ycombinator.com";
+const proxy_url = "https://immense-garden-15042.herokuapp.com"
+
 var firebase = require('firebase');
 require('firebase/database');
 var firebaseConfig = {
@@ -19,6 +23,25 @@ function get(endpoint) {
 			resolve(data.val())
 		})
 	})
+}
+
+export function signup(username, password, go_to) {
+	return 0;
+	// TODO: implement
+}
+
+// POST request to hackernews login endpoint
+export function login(username, password, go_to) {
+	const headers = new Headers({
+		'Content-Type': 'application/x-www-form-urlencoded',
+		'Access-Control-Allow-Origin': '*'
+	})
+
+	return fetch(`${proxy_url}/${base_url}`, {
+		method: 'POST',
+		body: `acct=${username}&pw=${password}&goto=${go_to}`
+	})
+
 }
 
 export function getItem(id) {

@@ -7,6 +7,7 @@ import {
 import Form from './../form/Form'
 import TextField from './../form/TextField'
 import './Authenticate.css';
+import {login, signup} from './../../helpers/hackernews_api'
 
 class LoginForm extends Component {
 	constructor(props) {
@@ -26,7 +27,11 @@ class LoginForm extends Component {
 	}
 
 	handleSubmit(e) {
-		alert('login form submitted')
+		e.preventDefault()
+		login(this.state.username, this.state.pass, "news").then(data => data.text()).then(data => {
+			console.log(data)
+		})
+
 	}
 
 	render() {

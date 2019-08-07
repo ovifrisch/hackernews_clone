@@ -13,7 +13,7 @@ class Form extends Component {
 
 	render() {
 		return (
-			<form autocomplete="off" onSubmit={(e) => this.props.handleSubmit(e)}>
+			<form autoComplete="off" onSubmit={(e) => this.props.handleSubmit(e)}>
 				{this.props.fields}
 				<input type="submit" value="Submit" />
 			</form>

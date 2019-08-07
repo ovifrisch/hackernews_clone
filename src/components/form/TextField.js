@@ -14,7 +14,7 @@ class TextField extends Component {
 	render() {
 		return (
 				<div>
-					<input type={this.props.type} autocomplete="off" name={this.props.name} value={this.props.value} onChange={(e) => this.props.handleChange(e)}/>
+					<input type={this.props.type} autoComplete="off" name={this.props.name} value={this.props.value} onChange={(e) => this.props.handleChange(e)}/>
 					<br/>
 				</div>
 		)
